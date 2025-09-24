@@ -9,20 +9,81 @@ const root = join(__dirname, '../../..')
 const tokensDir = join(root, 'packages', 'design-tokens', 'src')
 const outCss = join(__dirname, '..', 'cpx-theme.css')
 
-function extractColorVars(tokens) {
+function extractTokenVars(tokens) {
   const vars = {}
-  const visit = (obj, path = []) => {
-    Object.entries(obj).forEach(([k, v]) => {
-      const next = [...path, k]
-      if (v && typeof v === 'object' && 'value' in v) {
-        const key = `--${next.join('-').toLowerCase()}`
-        const value = typeof v.value === 'string' ? v.value : String(v.value)
-        vars[key] = value
-      } else if (v && typeof v === 'object') {
-        visit(v, next)
-      }
-    })
+
+  const normalize = (segments) => {
+    const joined = segments.join('-').toLowerCase()
+    const sanitized = joined
+      .replace(/[^a-z0-9_-]+/gi, '-') // replace spaces and symbols with hyphen
+      .replace(/-+/g, '-') // collapse multiple hyphens
+      .replace(/^-+|-+$/g, '') // trim leading/trailing hyphens
+    return `--${sanitized}`
   }
+
+  const normalizeRef = (refPath) => {
+    const parts = String(refPath)
+      .split('.')
+      .map((s) => s.trim())
+      .filter(Boolean)
+    return normalize(parts)
+  }
+
+  const replaceReferences = (str) => {
+    if (typeof str !== 'string') return str
+    return str.replace(/\{([^}]+)\}/g, (_, ref) => `var(${normalizeRef(ref)})`)
+  }
+
+  const coerceToString = (val) => {
+    if (Array.isArray(val)) return replaceReferences(val.map((v) => (typeof v === 'string' ? v : String(v))).join(' '))
+    return replaceReferences(typeof val === 'string' ? val : String(val))
+  }
+
+  const visitValue = (valueObj, path) => {
+    if (valueObj == null) return
+    if (typeof valueObj !== 'object') {
+      const cssVar = normalize(path)
+      if (cssVar.length > 2) vars[cssVar] = coerceToString(valueObj)
+      return
+    }
+
+    for (const [subKey, subVal] of Object.entries(valueObj)) {
+      if (subVal && typeof subVal === 'object') {
+        visitValue(subVal, [...path, subKey])
+      } else {
+        const cssVar = normalize([...path, subKey])
+        if (cssVar.length > 2) vars[cssVar] = coerceToString(subVal)
+      }
+    }
+  }
+
+  const getValue = (obj) => {
+    if (obj == null || typeof obj !== 'object') return undefined
+    if ('value' in obj) return obj.value
+    if ('$value' in obj) return obj.$value
+    return undefined
+  }
+
+  const visit = (obj, path = []) => {
+    for (const [key, val] of Object.entries(obj)) {
+      const nextPath = [...path, key]
+      const leafValue = getValue(val)
+      if (leafValue !== undefined) {
+        if (leafValue && typeof leafValue === 'object') {
+          visitValue(leafValue, nextPath)
+        } else {
+          const cssVar = normalize(nextPath)
+          if (cssVar.length > 2) vars[cssVar] = coerceToString(leafValue)
+        }
+        continue
+      }
+
+      if (val && typeof val === 'object') {
+        visit(val, nextPath)
+      }
+    }
+  }
+
   visit(tokens)
   return vars
 }
@@ -33,13 +94,53 @@ async function main() {
   for (const f of files) {
     if (!f.endsWith('.json')) continue
     const json = JSON.parse(await fs.readFile(join(tokensDir, f), 'utf8'))
-    Object.assign(allVars, extractColorVars(json))
+    Object.assign(allVars, extractTokenVars(json))
   }
+
+  // Inject alias variables expected by base styles and apps
+  const has = (name) => Object.prototype.hasOwnProperty.call(allVars, name)
+  const set = (name, value) => {
+    if (!has(name)) allVars[name] = value
+  }
+
+  // Spacing aliases: --space-X -> --utilities-spacing-X
+  Object.keys(allVars)
+    .filter((k) => k.startsWith('--utilities-spacing-'))
+    .forEach((k) => {
+      const suffix = k.replace('--utilities-spacing-', '')
+      set(`--space-${suffix}`, `var(${k})`)
+    })
+
+  // Radius aliases: --radius-X -> --border_radius-X
+  Object.keys(allVars)
+    .filter((k) => k.startsWith('--border_radius-'))
+    .forEach((k) => {
+      const suffix = k.replace('--border_radius-', '')
+      set(`--radius-${suffix}`, `var(${k})`)
+    })
+
+  // Basic color aliases used by base.css and app.css
+  // Choose reasonable defaults if present
+  const prefer = (...keys) => keys.find((k) => has(k))
+
+  const gray50 = prefer('--colors-gray-50', '--colors-slate-50', '--colors-zinc-50')
+  const gray100 = prefer('--colors-gray-100', '--colors-slate-100', '--colors-zinc-100')
+  const gray900 = prefer('--colors-gray-900', '--colors-slate-900', '--colors-zinc-900')
+  const white = prefer('--colors-white-100', '--colors-white-50')
+  const blue600 = prefer('--colors-blue-600', '--colors-indigo-600', '--colors-sky-600')
+
+  if (gray50 || gray100) set('--color-bg', `var(${gray50 || gray100})`)
+  if (gray900) set('--color-fg', `var(${gray900})`)
+  if (gray100) set('--color-muted', `var(${gray100})`)
+  if (blue600) set('--color-primary', `var(${blue600})`)
+  if (white) set('--color-primary-foreground', `var(${white})`)
+
+  const sortedEntries = Object.entries(allVars).sort(([a], [b]) => a.localeCompare(b))
 
   const lines = [
     '/* Generated by CPX from design tokens */',
     '@theme {',
-    ...Object.entries(allVars).map(([k, v]) => `  ${k}: ${v};`),
+    ...sortedEntries.map(([k, v]) => `  ${k}: ${v};`),
     '}',
     '',
   ]
@@ -51,5 +152,3 @@ main().catch((e) => {
   console.error(e)
   process.exit(1)
 })
-
-

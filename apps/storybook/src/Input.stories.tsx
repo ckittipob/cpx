@@ -1,5 +1,5 @@
+// apps/storybook/src/Input.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Input } from '@ckittipob/cpx/react-input'
 
 const meta: Meta<typeof Input> = {
@@ -8,10 +8,6 @@ const meta: Meta<typeof Input> = {
 }
 export default meta
 
-type Story = StoryObj<typeof Input>
-
-export const Base: Story = {
+export const Basic: StoryObj<typeof Input> = {
   args: { placeholder: 'Email' },
 }
-
-

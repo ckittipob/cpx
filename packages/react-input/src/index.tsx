@@ -10,7 +10,7 @@ export type InputProps = ComponentPropsWithoutRef<'input'> & {
 export const Input = React.forwardRef<ElementRef<'input'>, InputProps>(
   ({ asChild = false, className, ...props }, ref) => {
     const Comp = asChild ? Slot : 'input'
-    return <Comp ref={ref} className={cn('input bg-red-500', className)} {...props} />
+    return <Comp ref={ref} className={cn('input py-[120px]', className)} {...props} />
   },
 )
 

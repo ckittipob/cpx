@@ -8,18 +8,19 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@storybook/react": "^8.6.14",
-    "@storybook/react-vite": "^8.6.14",
-    "@ckittipob/cpx/theme": "workspace:*",
     "@ckittipob/cpx/react-button": "workspace:*",
     "@ckittipob/cpx/react-input": "workspace:*",
-    "tailwindcss": "^4.0.0",
+    "@ckittipob/cpx/theme": "workspace:*",
+    "@storybook/react": "^8.6.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "storybook": "^8.6.14"
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "storybook": "^8.6.14",
+    "tailwindcss": "^4.0.0"
   }
 }
-
-

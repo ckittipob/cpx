@@ -11,7 +11,9 @@ export type ButtonProps = ComponentPropsWithoutRef<'button'> & {
 export const Button = React.forwardRef<ElementRef<'button'>, ButtonProps>(
   ({ asChild = false, variant = 'default', className, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
-    return <Comp ref={ref} className={cn('btn', variant === 'primary' && 'btn-primary', className)} {...props} />
+    return (
+      <Comp ref={ref} className={cn('btn py-[120px]', variant === 'primary' && 'btn-primary', className)} {...props} />
+    )
   },
 )
 
