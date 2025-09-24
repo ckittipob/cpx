@@ -1,15 +1,48 @@
 {
   "name": "@ckittipob/cpx",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "bin": {
-    "cpx": "./bin/cpx.js"
+    "cpx": "dist/cli.js"
   },
   "description": "CPX CLI: init projects, add components, and build tokens",
-  "files": ["bin", "src"],
-  "dependencies": {},
-  "license": "MIT"
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./button": {
+      "import": "./dist/adapters/react/button.js",
+      "types": "./dist/adapters/react/button.d.ts"
+    },
+    "./input": {
+      "import": "./dist/adapters/react/input.js",
+      "types": "./dist/adapters/react/input.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@ckittipob/cpx/react-button": "workspace:*",
+    "@ckittipob/cpx/react-input": "workspace:*",
+    "@ckittipob/cpx/design-tokens": "workspace:*",
+    "execa": "^9.4.0",
+    "semver": "^7.6.3",
+    "fs-extra": "^11.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": ">=4 || >=3.4"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build && npm run check",
+    "check": "tsc --noEmit"
+  }
 }
-
-

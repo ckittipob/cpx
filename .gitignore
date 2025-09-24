@@ -11,3 +11,4 @@ pnpm-lock.yaml
 .vscode
 readme.md
 storybook-static
+*.md

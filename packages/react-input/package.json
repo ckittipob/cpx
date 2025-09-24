@@ -1,10 +1,10 @@
 {
   "name": "@ckittipob/cpx/react-input",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
@@ -13,20 +13,30 @@
       "default": "./dist/index.js"
     }
   },
-  "sideEffects": false,
-  "files": ["dist", "src"],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsup",
+    "check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run check"
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "tailwindcss": ">=4 || >=3.4"
   },
   "dependencies": {
     "@ckittipob/cpx/utils": "workspace:*",
-    "@radix-ui/react-slot": "^1.1.0"
+    "@radix-ui/react-slot": "^1.1.0",
+    "tailwind-merge": "^2.5.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "license": "MIT"
 }
-
-

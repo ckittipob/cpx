@@ -8,6 +8,7 @@
     "declaration": true,
     "declarationMap": true,
     "skipLibCheck": true,
+    "types": ["node"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -17,5 +18,3 @@
     }
   }
 }
-
-
