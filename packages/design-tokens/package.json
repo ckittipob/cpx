@@ -1,0 +1,17 @@
+{
+  "name": "@ckittipob/cpx/design-tokens",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "description": "Default CPX design tokens (JSON) used to generate theme CSS",
+  "files": ["src"],
+  "exports": {
+    ".": "./src"
+  },
+  "scripts": {
+    "build": "node ./scripts/sync-examples.mjs"
+  },
+  "license": "MIT"
+}
+
+

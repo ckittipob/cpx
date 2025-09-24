@@ -1,0 +1,506 @@
+{
+  "Box Shadow": {
+    "2xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "0px",
+          "spread": "0px",
+          "color": "#0000000d"
+        }
+      ]
+    },
+    "xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "2px",
+          "spread": "0px",
+          "color": "#0000000d"
+        }
+      ]
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "2px",
+          "spread": "-1px",
+          "color": "#0000001a"
+        },
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0px",
+          "color": "#0000001a"
+        }
+      ]
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "2px",
+          "blur": "4px",
+          "spread": "-2px",
+          "color": "#0000001a"
+        },
+        {
+          "offsetX": "0px",
+          "offsetY": "4px",
+          "blur": "6px",
+          "spread": "-1px",
+          "color": "#0000001a"
+        }
+      ]
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "4px",
+          "blur": "6px",
+          "spread": "-4px",
+          "color": "#0000001a"
+        },
+        {
+          "offsetX": "0px",
+          "offsetY": "10px",
+          "blur": "15px",
+          "spread": "-3px",
+          "color": "#0000001a"
+        }
+      ]
+    },
+    "xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "8px",
+          "blur": "10px",
+          "spread": "-6px",
+          "color": "#0000001a"
+        },
+        {
+          "offsetX": "0px",
+          "offsetY": "20px",
+          "blur": "25px",
+          "spread": "-5px",
+          "color": "#0000001a"
+        }
+      ]
+    },
+    "2xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "25px",
+          "blur": "50px",
+          "spread": "-12px",
+          "color": "#00000040"
+        }
+      ]
+    }
+  },
+  "Drop Shadow": {
+    "xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "1px",
+          "spread": "0px",
+          "color": "#0000000d"
+        }
+      ]
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "2px",
+          "spread": "0px",
+          "color": "#00000026"
+        }
+      ]
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "3px",
+          "blur": "3px",
+          "spread": "0px",
+          "color": "#0000001f"
+        }
+      ]
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "4px",
+          "blur": "4px",
+          "spread": "0px",
+          "color": "#00000026"
+        }
+      ]
+    },
+    "xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "9px",
+          "blur": "7px",
+          "spread": "0px",
+          "color": "#0000001a"
+        }
+      ]
+    },
+    "2xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "25px",
+          "blur": "25px",
+          "spread": "0px",
+          "color": "#00000026"
+        }
+      ]
+    }
+  },
+  "Inner Shadow": {
+    "2xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "0px",
+          "spread": "0px",
+          "color": "#0000000d",
+          "inset": true
+        }
+      ]
+    },
+    "xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "1px",
+          "spread": "0px",
+          "color": "#0000000d",
+          "inset": true
+        }
+      ]
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "2px",
+          "blur": "4px",
+          "spread": "0px",
+          "color": "#0000000d",
+          "inset": true
+        }
+      ]
+    }
+  },
+  "Focus Ring": {
+    "Gray 800": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#1f293740"
+        }
+      ]
+    },
+    "Green-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#14b8a640"
+        }
+      ]
+    },
+    "Blue-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#3b82f640"
+        }
+      ]
+    },
+    "Indigo-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#6366f140"
+        }
+      ]
+    },
+    "Purple-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#a855f740"
+        }
+      ]
+    },
+    "Pink-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#ec489940"
+        }
+      ]
+    },
+    "Red-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#ef444440"
+        }
+      ]
+    },
+    "Yellow-500": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#eab30840"
+        }
+      ]
+    },
+    "White": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "4px",
+          "color": "#9ca3af40"
+        }
+      ]
+    }
+  },
+  "Layer Blur": {
+    "xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "4px"
+        }
+      ]
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "8px"
+        }
+      ]
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "12px"
+        }
+      ]
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "16px"
+        }
+      ]
+    },
+    "xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "24px"
+        }
+      ]
+    },
+    "2xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "40px"
+        }
+      ]
+    },
+    "3xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "layerBlur": true,
+          "blur": "64px"
+        }
+      ]
+    }
+  },
+  "Background Blur": {
+    "xs": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "4px"
+        }
+      ]
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "8px"
+        }
+      ]
+    }
+  },
+  "Background Blur ": {
+    " md": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "12px"
+        }
+      ]
+    },
+    " lg": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "16px"
+        }
+      ]
+    },
+    " xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "24px"
+        }
+      ]
+    },
+    " 2xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "40px"
+        }
+      ]
+    },
+    " 3xl": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "backgroundBlur": true,
+          "blur": "64px"
+        }
+      ]
+    }
+  },
+  "Input ": {
+    " Range Slider Touch Area": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "2px",
+          "blur": "2px",
+          "spread": "0px",
+          "color": "#0000000f"
+        },
+        {
+          "offsetX": "0px",
+          "offsetY": "3px",
+          "blur": "6px",
+          "spread": "0px",
+          "color": "#9ca3af59"
+        }
+      ]
+    },
+    " Circles (Pie chart)": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "offsetX": "0px",
+          "offsetY": "6px",
+          "blur": "24px",
+          "spread": "0px",
+          "color": "#00000014"
+        }
+      ]
+    }
+  }
+}

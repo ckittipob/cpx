@@ -1,0 +1,172 @@
+{
+  "Grid Columns": {
+    "1 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 1,
+          "offset": "0px"
+        }
+      ]
+    },
+    "2 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 2,
+          "offset": "0px"
+        }
+      ]
+    },
+    "3(32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 3,
+          "offset": "0px"
+        }
+      ]
+    },
+    "4 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 4,
+          "offset": "0px"
+        }
+      ]
+    },
+    "5 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 5,
+          "offset": "0px"
+        }
+      ]
+    },
+    "6 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 6,
+          "offset": "0px"
+        }
+      ]
+    },
+    "7 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 7,
+          "offset": "0px"
+        }
+      ]
+    },
+    "8 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 8,
+          "offset": "0px"
+        }
+      ]
+    },
+    "9 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 9,
+          "offset": "0px"
+        }
+      ]
+    },
+    "10 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 10,
+          "offset": "0px"
+        }
+      ]
+    },
+    "11 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 11,
+          "offset": "0px"
+        }
+      ]
+    },
+    "12 (32px Gutter)": {
+      "$type": "grid",
+      "$value": [
+        {
+          "pattern": "columns",
+          "visible": true,
+          "alignment": "stretch",
+          "color": "#ff00001a",
+          "gutterSize": "32px",
+          "count": 12,
+          "offset": "0px"
+        }
+      ]
+    }
+  }
+}

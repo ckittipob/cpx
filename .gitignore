@@ -1,0 +1,12 @@
+node_modules
+dist
+.turbo
+.next
+.vite
+.storybook-cache
+coverage
+.DS_Store
+pnpm-lock.yaml
+.cursor
+.vscode
+readme.md

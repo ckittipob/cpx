@@ -1,0 +1,28 @@
+{
+  "name": "@ckittipob/cpx/theme",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "description": "CPX Tailwind v4 theme: default design tokens exported as @theme CSS",
+  "files": [
+    "index.css",
+    "cpx-theme.css",
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./index.css"
+  },
+  "scripts": {
+    "build": "node ./scripts/build-theme.mjs"
+  },
+  "dependencies": {
+    "@ckittipob/cpx/design-tokens": "workspace:*"
+  },
+  "keywords": ["tailwind", "tailwindcss", "theme", "design tokens", "oklch"],
+  "license": "MIT"
+}
+
+
